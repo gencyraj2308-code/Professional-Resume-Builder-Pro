@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Professional Resume Builder Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="print-render-zone"></div>
+
+    <div class="mesh-bg"></div>
+
+    <div class="super-app-grid">
+        <section class="glass-panel input-matrix hover-glow">
+            <h2>1. Profile Matrix</h2>
+            <div class="input-group">
+                <label>Name</label>
+                <input type="text" id="user-name" placeholder="Full name">
+            </div>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="user-email" placeholder="name@email.com">
+            </div>
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="text" id="user-phone" placeholder="Mobile number">
+            </div>
+            <div class="input-group">
+                <label>Address</label>
+                <input type="text" id="user-address" placeholder="City, State">
+            </div>
+            <div class="input-group">
+                <label>Qualifications</label>
+                <input type="text" id="user-qualifications" placeholder="Degrees or school milestones">
+            </div>
+            <div class="input-group">
+                <label>Certifications</label>
+                <input type="text" id="user-certifications" placeholder="Courses or online training records">
+            </div>
+            <div class="input-group">
+                <label>Skills</label>
+                <input type="text" id="user-skills" placeholder="e.g. Java, Excel, Management">
+            </div>
+            <div class="input-group">
+                <label>Experience and How Many Years</label>
+                <input type="text" id="user-exp-years" placeholder="e.g. 2 Years at Corporate Inc">
+            </div>
+            <div class="input-group">
+                <label>Social Media Handles</label>
+                <input type="text" id="user-socials" placeholder="LinkedIn or GitHub links">
+            </div>
+            <div class="input-group">
+                <label>Extra Curricular Activities</label>
+                <input type="text" id="user-activities" placeholder="Clubs, volunteering, or sports">
+            </div>
+            <div class="input-group">
+                <label style="color: #ff003c; font-weight: bold;">Upload Qualification Certificates (PDF only)</label>
+                <input type="file" id="certificate-uploader" accept="application/pdf" multiple style="background: rgba(255,0,60,0.05); border-color: rgba(255,0,60,0.2);">
+            </div>
+            <button id="next-matrix-btn" class="magic-btn" style="background: #007aff; margin-top: 10px; width: 100%;">Next in Profile Matrix →</button>
+        </section>
+
+        <main class="glass-panel workspace-hub hover-glow">
+            <div class="workspace-header">
+                <h2>2. Workspace Canvas</h2>
+                <button id="master-generate-btn" class="magic-btn animate-pulse">✨ Run Master Synthesis</button>
+            </div>
+
+            <textarea id="output-canvas" class="canvas-sheet font-inter theme-default" placeholder="AI layout contents will render inside this interactive tracking panel block..."></textarea>
+
+            <div class="styles-super-wrapper">
+                <h3>Select Profile Templates</h3>
+                <div class="style-grid-container">
+                    <button class="style-node active" data-type="template" data-val="bazz">Standard Bazz</button>
+                    <button class="style-node" data-type="template" data-val="gazz">Gazz Clear</button>
+                    <button class="style-node" data-type="template" data-val="corporate">Classic Corporate</button>
+                    <button class="style-node" data-type="theme" data-val="theme-default">Default Blue</button>
+                    <button class="style-node" data-type="theme" data-val="theme-emerald">Eco Emerald</button>
+                    <button class="style-node" data-type="size" data-val="size-compact">High Density Space</button>
+                </div>
+            </div>
+        </main>
+
+        <div class="right-sidebar-wrapper">
+            <aside class="glass-panel intelligence-control hover-glow">
+                <h2>3. AI Optimization Array</h2>
+                <div class="tool-card">
+                    <h4>Scan Errors & Miscommunications</h4>
+                    <button id="tool-check-errors" class="tool-action-btn">Scan Text Content</button>
+                </div>
+                <div class="tool-card">
+                    <h4>Recruitment Analytics Pipeline</h4>
+                    <button id="tool-run-analytics" class="tool-action-btn">Analyze Marketplace Match</button>
+                </div>
+
+                <div id="ai-mini-report" class="mini-report-box hidden">
+                    <h5 id="report-title">Analysis Matrix Report</h5>
+                    <pre id="report-body"></pre>
+                </div>
+            </aside>
+
+            <aside class="glass-panel bomb-console-wrapper hover-glow">
+                <h2>4. Final Resume Generation</h2>
+                <p style="font-size: 11px; color: #8a8a93; margin-bottom: 8px;">Copy-paste the finalized content description text field inside this launch window:</p>
+                <textarea id="final-bomb-input" class="bomb-terminal" placeholder="[TERMINAL CODE ACTIVE] Paste content right here..."></textarea>
+                <button id="print-bomb-btn" class="bomb-launch-trigger">💥 PRINT YOUR RESUME</button>
+            </aside>
+        </div>
+    </div>
+
+    <footer style="position: fixed; bottom: 10px; left: 24px; font-size: 10px; color: rgba(255,255,255,0.15); font-family: monospace;">
+        Origin Secure: Professional-Resume-Builder-Pro.git
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
