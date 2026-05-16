@@ -4,16 +4,15 @@ const app = express();
 
 const PORT = process.env.PORT || 4000;
 
-// Tell Express to serve all your frontend static assets correctly
-// This points out of the BackEnd folder and into your frontend folder
-app.use(express.static(path.join(__dirname, '../frontend')));
+// Serve frontend static assets cleanly from the root project folder
+app.use(express.static(path.join(__dirname, '../Frontend')));
 
 // Parse JSON request payloads
 app.use(express.json());
 
-// Main entry point - serve index.html when someone lands on the page
+// Main entry point - serve index.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
+    res.sendFile(path.join(__dirname, '../Frontend', 'index.html'));
 });
 
 // Start the server
