@@ -5,14 +5,14 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Serve frontend static assets cleanly from the root project folder
-app.use(express.static(path.join(__dirname, '../Frontend')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Parse JSON request payloads
 app.use(express.json());
 
 // Main entry point - serve index.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Frontend', 'index.html'));
+    res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
 });
 
 // Start the server
