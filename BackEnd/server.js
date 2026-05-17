@@ -1,21 +1,37 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const app = express();
 
 const PORT = process.env.PORT || 4000;
 
-// Serve frontend static assets cleanly from the root project folder
-app.use(express.static(path.join(__dirname, '../frontend')));
-
 // Parse JSON request payloads
 app.use(express.json());
 
-// Main entry point - serve index.html
+// Dynamic Finder: Automatically detects the frontend folder regardless of spelling/casing
+let frontendPath = path.join(__dirname, '../frontend');
+
+if (!fs.existsSync(frontendPath)) {
+    if (fs.existsSync(path.join(__dirname, '../FrontEnd'))) {
+        frontendPath = path.join(__dirname, '../FrontEnd');
+    } else if (fs.existsSync(path.join(__dirname, '../frontEnd'))) {
+        frontendPath = path.join(__dirname, '../frontEnd');
+    } else if (fs.existsSync(path.join(__dirname, '../Frontend'))) {
+        frontendPath = path.join(__dirname, '../Frontend');
+    }
+}
+
+console.log(`[Backend Configuration] Serving assets from: ${frontendPath}`);
+
+// Serve static elements cleanly
+app.use(express.static(frontendPath));
+
+// Route entry point - server main dashboard UI page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
+    res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
-// Start the server
+// Boot configuration
 app.listen(PORT, () => {
     console.log(`[gencyraj-workspace] Backend running on port ${PORT}`);
 });
